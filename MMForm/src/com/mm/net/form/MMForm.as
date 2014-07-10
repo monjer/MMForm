@@ -175,7 +175,7 @@ package com.mm.net.form
 		private function appendBoundary():void
 		{			
 			// form body起始边界尾部只能添加一个\r\n
-			this.formData.writeUTFBytes("\r\n--MMFormBoundaryP6fk9Xsc4BGl3Kll\r\n") ;
+			this.formData.writeUTFBytes("\r\n--" + this.boundary + "\r\n") ;
 		}
 		
 		/**
@@ -183,7 +183,7 @@ package com.mm.net.form
 		 */
 		private function appendCloseBoundary():void
 		{
-			this.formData.writeUTFBytes("\r\n\--MMFormBoundaryP6fk9Xsc4BGl3Kll--\r\n") ;
+			this.formData.writeUTFBytes("\r\n\--" + this.boundary  + "--\r\n") ;
 		}
 		
 		/**
